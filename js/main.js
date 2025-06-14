@@ -116,7 +116,7 @@ document.getElementById("formBooking").addEventListener("submit", function(event
     const email = document.getElementById('email').value;
     
     const layananSelect = document.getElementById('layanan');
-    const layanan = layananSelect.options[layananSelect.selectedIndex].text;
+    const layanan = layananSelect.options[layananSelect.selectedIndex].value;
 
     const tanggal = document.getElementById('tanggal').value;
     const keluhan = document.getElementById('keluhan').value;
