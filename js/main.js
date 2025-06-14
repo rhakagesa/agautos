@@ -127,7 +127,7 @@ document.getElementById("formBooking").addEventListener("submit", function(event
     
     const url = 'https://wa.me/' + nomor + '?text=' + encodeURIComponent(pesanWa);
 
-    window.open(url, '_blank');
+    window.location.href = url;
 });
 
 //Scroll untuk Tab Layanan
