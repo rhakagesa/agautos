@@ -112,19 +112,22 @@
 document.getElementById("formBooking").addEventListener("submit", function(event) {
     event.preventDefault();
 
-      const nama = document.getElementById('nama').value;
-      const email = document.getElementById('email').value;
-      const layanan = document.getElementById('layanan').value;
-      const tanggal = document.getElementById('tanggal').value;
-      const keluhan = document.getElementById('keluhan').value;
-      
-      const nomor = '6281315800996';
-      const pesanWa = encodeURIComponent( 
-        `Nama: ${nama}%0AEmail: ${email}%0ALayanan: ${layanan}%0ATanggal: ${tanggal}%0AKeluhan: ${keluhan}`);
+    const nama = document.getElementById('nama').value;
+    const email = document.getElementById('email').value;
+    
+    const layananSelect = document.getElementById('layanan');
+    const layanan = layananSelect.options[layananSelect.selectedIndex].text;
 
-      const url = 'https://wa.me/' + nomor + '?text=' + pesanWa;
+    const tanggal = document.getElementById('tanggal').value;
+    const keluhan = document.getElementById('keluhan').value;
 
-      window.open(url, '_blank');
+    const nomor = '6281315800996';
+    
+    const pesanWa = `Nama: ${nama}\nEmail: ${email}\nLayanan: ${layanan}\nTanggal: ${tanggal}\nKeluhan: ${keluhan}`;
+    
+    const url = 'https://wa.me/' + nomor + '?text=' + encodeURIComponent(pesanWa);
+
+    window.open(url, '_blank');
 });
 
 //Scroll untuk Tab Layanan
